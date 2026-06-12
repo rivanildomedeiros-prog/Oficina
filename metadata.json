@@ -1,0 +1,6 @@
+{
+  "name": "DestakCar",
+  "description": "Sistema completo de gestão de oficina mecânica com controle de clientes, veículos, ordens de serviço, orçamentos e estoque de peças.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
