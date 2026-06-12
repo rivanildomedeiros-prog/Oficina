@@ -1,0 +1,362 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <!-- Definitions of gradients, patterns, and filters for high-fidelity metallic/3D rendering -->
+  <defs>
+    <!-- Dark blue gear wheel metallic gradient -->
+    <linearGradient id="gearBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="40%" stop-color="#172554" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    
+    <!-- Chrome metal/silver gradient for piston & biela -->
+    <linearGradient id="chromeMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="20%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="80%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Chrome shadow for piston dimensions -->
+    <linearGradient id="pistonShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    
+    <!-- Fiery Orange Wing Gradient -->
+    <linearGradient id="wingOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+
+    <!-- Wings Chrome Gradient (Metal feel on wings) -->
+    <linearGradient id="wingSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <linearGradient id="wingBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Ambient Shadow for Logo Base -->
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+
+    <!-- Beveled look filter -->
+    <filter id="softBevel" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="15" lighting-color="#ffffff" result="light">
+        <fePointLight x="150" y="50" z="200"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="lit"/>
+    </filter>
+
+    <!-- Defining a single Gear Tooth for perfect rotation matrix -->
+    <path id="gearTooth" d="M -14,-58 L -9,-80 L 9,-80 L 14,-58 Z" fill="url(#gearBlue)" stroke="#1e293b" stroke-width="1" />
+  </defs>
+
+  <!-- 1. Background Grid Subtle Glow -->
+  <rect width="100%" height="100%" fill="none" />
+
+  <!-- 2. Logo Main Body -->
+  <g filter="url(#subtleShadow)">
+    
+    <!-- EMBLEM CONTAINER GROUP -->
+    <g transform="translate(300, 115)">
+      
+      <!-- GEAR TEETH OUTER BOUNDS (12 items rotated symmetrically) -->
+      <g>
+        <use href="#gearTooth" transform="rotate(0)" />
+        <use href="#gearTooth" transform="rotate(30)" />
+        <use href="#gearTooth" transform="rotate(60)" />
+        <use href="#gearTooth" transform="rotate(90)" />
+        <use href="#gearTooth" transform="rotate(120)" />
+        <use href="#gearTooth" transform="rotate(150)" />
+        <use href="#gearTooth" transform="rotate(180)" />
+        <use href="#gearTooth" transform="rotate(210)" />
+        <use href="#gearTooth" transform="rotate(240)" />
+        <use href="#gearTooth" transform="rotate(270)" />
+        <use href="#gearTooth" transform="rotate(300)" />
+        <use href="#gearTooth" transform="rotate(330)" />
+      </g>
+
+      <!-- Gear Outer Circle rim -->
+      <circle cx="0" cy="0" r="62" fill="url(#gearBlue)" stroke="#0f172a" stroke-width="2.5" />
+      <circle cx="0" cy="0" r="50" fill="#f8fafc" stroke="#334155" stroke-width="1.5" />
+      <!-- Dotted detailed inner path inside gear -->
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#f97316" stroke-width="1" stroke-dasharray="3 2" />
+
+      <!-- ENGINE PISTON (Central Element) -->
+      <g filter="url(#softBevel)">
+        
+        <!-- Connecting Rod (Biela) -->
+        <!-- Bottom round collar -->
+        <circle cx="0" cy="34" r="14" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.5" />
+        <circle cx="0" cy="34" r="8" fill="#f8fafc" stroke="#334155" stroke-width="1.2" />
+        <!-- Biela nuts -->
+        <circle cx="-10" cy="28" r="1.5" fill="#1e293b" />
+        <circle cx="10" cy="28" r="1.5" fill="#1e293b" />
+
+        <!-- Rod Body -->
+        <path d="M -7,-12 L -6,22 L 6,22 L 7,-12 Z" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.5" />
+        <!-- Rod central recess -->
+        <path d="M -3,-6 L -2,16 L 2,16 L 3,-6 Z" fill="#94a3b8" />
+
+        <!-- Wrist Pin (Pino do Pistão) -->
+        <circle cx="0" cy="-12" r="10" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.5" />
+        <circle cx="0" cy="-12" r="5" fill="#1e293b" />
+
+        <!-- Piston Crown / Head (Cabeça e Corpo do Pistão) -->
+        <path d="M -26,-15 L -26,-44 C -12,-47 12,-47 26,-44 L 26,-15 C 26,-12 22,-8 20,-8 L -20,-8 C -22,-8 -26,-12 -26,-15 Z" fill="url(#chromeMetal)" stroke="#1e293b" stroke-width="1.8" />
+        
+        <!-- Segment Rings Grooves (Precessões dos anéis de segmento) -->
+        <line x1="-24" y1="-38" x2="24" y2="-38" stroke="#1e293b" stroke-width="2" />
+        <line x1="-24" y1="-32" x2="24" y2="-32" stroke="#1e293b" stroke-width="2" />
+        <line x1="-24" y1="-26" x2="24" y2="-26" stroke="#1e293b" stroke-width="1.5" />
+
+        <!-- Side cutouts of the piston body (Sapatas do pistão) -->
+        <path d="M -16,-8 Q -20,-12 -20,-18 L -16,-18 Z" fill="#94a3b8" opacity="0.6"/>
+        <path d="M 16,-8 Q 20,-12 20,-18 L 16,-18 Z" fill="#94a3b8" opacity="0.6"/>
+      </g>
+
+      <!-- AERODYNAMIC WINGS (Attached on Right Side) -->
+      <g>
+        <!-- Wing Blade 1 (Bottom - Blue/Dark) -->
+        <path d="M 40,16 Q 100,20 120,-8 Q 90,-2 40,2 Z" fill="url(#wingBlue)" stroke="#1e293b" stroke-width="1" />
+
+        <!-- Wing Blade 2 (Middle - Intense Gold and Fire Orange) -->
+        <path d="M 44,4 Q 130,5 152,-32 Q 100,-15 42,-8 Z" fill="url(#wingOrange)" stroke="#0f172a" stroke-width="1" />
+
+        <!-- Wing Blade 3 (Top Master - Premium Beveled Chrome Wing) -->
+        <path d="M 38,-10 Q 150,-24 176,-64 Q 115,-34 34,-26 Z" fill="url(#wingSilver)" stroke="#1e293b" stroke-width="1.2" />
+        <!-- Accent line in top wing -->
+        <path d="M 70,-18 C 100,-22 130,-34 155,-50" stroke="#f8fafc" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8" />
+      </g>
+      
+    </g>
+
+    <!-- BRAND TYPOGRAPHY DESIGN (Centered at x=300) -->
+    <g id="brand_text_group">
+      <!-- 3D Bevel/Shadow underneath text -->
+      <text x="301" y="222" font-family="'Space Grotesk', 'Inter', 'Helvetica', sans-serif" font-weight="900" font-size="44" fill="#0f172a" letter-spacing="4" text-anchor="middle">DESTAKCAR</text>
+      <!-- Main Metallic Typography -->
+      <text x="300" y="220" font-family="'Space Grotesk', 'Inter', 'Helvetica', sans-serif" font-weight="900" font-size="44" fill="#1e293b" letter-spacing="4" text-anchor="middle">DESTAKCAR</text>
+
+      <!-- SA Subtitle with stylish design -->
+      <text x="300" y="255" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="800" font-size="24" fill="#2563eb" letter-spacing="6" text-anchor="middle">SA</text>
+
+      <!-- Stylish Divider Line with dynamic central details -->
+      <line x1="160" y1="270" x2="440" y2="270" stroke="#3b82f6" stroke-width="1.8" />
+      <!-- Left fade shadow pointer -->
+      <polygon points="160,269 110,270 160,271" fill="#3b82f6" />
+      <!-- Right fade shadow pointer -->
+      <polygon points="440,269 490,270 440,271" fill="#3b82f6" stroke="none" />
+      <!-- Central orange anchor circle -->
+      <circle cx="300" cy="270" r="5" fill="#f97316" stroke="#ffffff" stroke-width="1.5" />
+
+      <!-- Business category in technical monospace look -->
+      <text x="300" y="295" font-family="'JetBrains Mono', 'Fira Code', monospace" font-weight="800" font-size="15" fill="#475569" letter-spacing="6" text-anchor="middle">OFICINA MECÂNICA</text>
+    </g>
+
+  </g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Definitions of gradients, patterns, and filters for high-fidelity metallic/3D rendering -->
+  <defs>
+    <!-- Dark blue gear wheel metallic gradient -->
+    <linearGradient id="gearBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="40%" stop-color="#172554" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    
+    <!-- Chrome metal/silver gradient for piston & biela -->
+    <linearGradient id="chromeMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="20%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="80%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Chrome shadow for piston dimensions -->
+    <linearGradient id="pistonShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    
+    <!-- Fiery Orange Wing Gradient -->
+    <linearGradient id="wingOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+
+    <!-- Wings Chrome Gradient (Metal feel on wings) -->
+    <linearGradient id="wingSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <linearGradient id="wingBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Ambient Shadow for Logo Base -->
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.2" />
+    </filter>
+
+    <!-- Beveled look filter -->
+    <filter id="softBevel" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="15" lighting-color="#ffffff" result="light">
+        <fePointLight x="150" y="50" z="200"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="lit"/>
+    </filter>
+
+    <!-- Defining a single Gear Tooth for perfect rotation matrix -->
+    <path id="gearTooth" d="M -16,-66 L -10,-91 L 10,-91 L 16,-66 Z" fill="url(#gearBlue)" stroke="#1e293b" stroke-width="1.2" />
+  </defs>
+
+  <!-- 1. Deep Rich Background Circle Layout -->
+  <circle cx="250" cy="250" r="235" fill="#ffffff" stroke="url(#gearBlue)" stroke-width="8" />
+
+  <!-- 2. Logo Main Body -->
+  <g filter="url(#subtleShadow)">
+    
+    <!-- EMBLEM CONTAINER GROUP -->
+    <g transform="translate(250, 180)">
+      
+      <!-- GEAR TEETH OUTER BOUNDS (12 items rotated symmetrically) -->
+      <g>
+        <use href="#gearTooth" transform="rotate(0)" />
+        <use href="#gearTooth" transform="rotate(30)" />
+        <use href="#gearTooth" transform="rotate(60)" />
+        <use href="#gearTooth" transform="rotate(90)" />
+        <use href="#gearTooth" transform="rotate(120)" />
+        <use href="#gearTooth" transform="rotate(150)" />
+        <use href="#gearTooth" transform="rotate(180)" />
+        <use href="#gearTooth" transform="rotate(210)" />
+        <use href="#gearTooth" transform="rotate(240)" />
+        <use href="#gearTooth" transform="rotate(270)" />
+        <use href="#gearTooth" transform="rotate(300)" />
+        <use href="#gearTooth" transform="rotate(330)" />
+      </g>
+
+      <!-- Gear Outer Circle rim -->
+      <circle cx="0" cy="0" r="72" fill="url(#gearBlue)" stroke="#0f172a" stroke-width="3" />
+      <circle cx="0" cy="0" r="58" fill="#f8fafc" stroke="#334155" stroke-width="1.8" />
+      <!-- Dotted detailed inner path inside gear -->
+      <circle cx="0" cy="0" r="51" fill="none" stroke="#f97316" stroke-width="1.2" stroke-dasharray="4 3" />
+
+      <!-- ENGINE PISTON (Central Element) -->
+      <g filter="url(#softBevel)">
+        
+        <!-- Connecting Rod (Biela) -->
+        <!-- Bottom round collar -->
+        <circle cx="0" cy="40" r="16" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.8" />
+        <circle cx="0" cy="40" r="9" fill="#f8fafc" stroke="#334155" stroke-width="1.5" />
+        <!-- Biela nuts -->
+        <circle cx="-11" cy="33" r="2" fill="#1e293b" />
+        <circle cx="11" cy="33" r="2" fill="#1e293b" />
+
+        <!-- Rod Body -->
+        <path d="M -8,-14 L -7,26 L 7,26 L 8,-14 Z" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.8" />
+        <!-- Rod central recess -->
+        <path d="M -3.5,-7 L -2.5,19 L 2.5,19 L 3.5,-7 Z" fill="#94a3b8" />
+
+        <!-- Wrist Pin (Pino do Pistão) -->
+        <circle cx="0" cy="-14" r="12" fill="url(#chromeMetal)" stroke="#334155" stroke-width="1.8" />
+        <circle cx="0" cy="-14" r="6" fill="#1e293b" />
+
+        <!-- Piston Crown / Head -->
+        <path d="M -30,-17 L -30,-50 C -14,-53 14,-53 30,-50 L 30,-17 C 30,-14 25,-9 23,-9 L -23,-9 C -25,-9 -30,-14 -30,-17 Z" fill="url(#chromeMetal)" stroke="#1e293b" stroke-width="2" />
+        
+        <!-- Segment Rings Grooves -->
+        <line x1="-28" y1="-44" x2="28" y2="-44" stroke="#1e293b" stroke-width="2.5" />
+        <line x1="-28" y1="-37" x2="28" y2="-37" stroke="#1e293b" stroke-width="2.5" />
+        <line x1="-28" y1="-30" x2="28" y2="-30" stroke="#1e293b" stroke-width="2" />
+
+        <!-- Side cutouts of the piston body (Sapatas do pistão) -->
+        <path d="M -18,-9 Q -23,-14 -23,-20 L -18,-20 Z" fill="#94a3b8" opacity="0.6"/>
+        <path d="M 18,-9 Q 23,-14 23,-20 L 18,-20 Z" fill="#94a3b8" opacity="0.6"/>
+      </g>
+
+      <!-- AERODYNAMIC WINGS (Attached on Right Side) -->
+      <g>
+        <!-- Wing Blade 1 (Bottom - Blue/Dark) -->
+        <path d="M 45,18 Q 115,22 138,-9 Q 103,-2 45,2 Z" fill="url(#wingBlue)" stroke="#1e293b" stroke-width="1.2" />
+
+        <!-- Wing Blade 2 (Middle - Intense Gold and Fire Orange) -->
+        <path d="M 50,4 Q 148,5 174,-36 Q 115,-17 48,-9 Z" fill="url(#wingOrange)" stroke="#0f172a" stroke-width="1.2" />
+
+        <!-- Wing Blade 3 (Top Master - Premium Beveled Chrome Wing) -->
+        <path d="M 43,-11 Q 170,-27 200,-73 Q 131,-38 39,-29 Z" fill="url(#wingSilver)" stroke="#1e293b" stroke-width="1.4" />
+        <!-- Accent line in top wing -->
+        <path d="M 80,-20 C 115,-25 150,-38 178,-56" stroke="#f8fafc" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8" />
+      </g>
+      
+    </g>
+
+    <!-- BRAND TYPOGRAPHY DESIGN (Centered at x=250) -->
+    <g id="brand_text_group">
+      <!-- 3D Bevel/Shadow underneath text -->
+      <text x="251" y="342" font-family="'Space Grotesk', 'Inter', 'Helvetica', sans-serif" font-weight="900" font-size="40" fill="#0f172a" letter-spacing="3" text-anchor="middle">DESTAKCAR</text>
+      <!-- Main Metallic Typography -->
+      <text x="250" y="340" font-family="'Space Grotesk', 'Inter', 'Helvetica', sans-serif" font-weight="900" font-size="40" fill="#1e293b" letter-spacing="3" text-anchor="middle">DESTAKCAR</text>
+
+      <!-- SA Subtitle with stylish design -->
+      <text x="250" y="375" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="800" font-size="22" fill="#2563eb" letter-spacing="5" text-anchor="middle">SA</text>
+
+      <!-- Stylish Divider Line with dynamic central details -->
+      <line x1="120" y1="390" x2="380" y2="390" stroke="#3b82f6" stroke-width="1.8" />
+      <polygon points="120,389 75,390 120,391" fill="#3b82f6" />
+      <polygon points="380,389 425,390 380,391" fill="#3b82f6" stroke="none" />
+      <circle cx="250" cy="390" r="4.5" fill="#f97316" stroke="#ffffff" stroke-width="1.5" />
+
+      <!-- Business category in technical monospace look -->
+      <text x="250" y="415" font-family="'JetBrains Mono', 'Fira Code', monospace" font-weight="800" font-size="13" fill="#475569" letter-spacing="5" text-anchor="middle">OFICINA MECÂNICA</text>
+    </g>
+
+  </g>
+</svg>
+
+{
+  "name": "DestakCar S.A.",
+  "short_name": "DestakCar",
+  "description": "Sistema de Gestão de Ordens de Serviço & Relatórios da Oficina DestakCar S.A.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
